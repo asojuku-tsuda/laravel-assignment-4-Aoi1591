@@ -151,6 +151,6 @@ Route::get('/message/received', function () {
  * 404エラーページを表示するために使用されます。
  * このルートは必ず他のすべてのルート定義の後に配置する必要があります。
  */
-// Route::xxxxxx(function () {
-//     return view('404');  // resources/views/404.blade.phpを表示
-// })->name('404');
+ Route::fallback(function () {
+     return view('404');  // resources/views/404.blade.phpを表示
+ })->name('404');
